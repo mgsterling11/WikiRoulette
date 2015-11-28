@@ -1,0 +1,16 @@
+
+<div class="links">
+  <% @links.each do |link| %>
+    <li>
+      <%#= link_to link, remote: true, method: :get  %>
+      <%#= link_to links_path(link: link), remote: true, method: :get %>
+      <%#= select_tag link, options_from_collection_for_select(@links, id="link", name="params[link]")%>
+      <%#= link_to link, links_path, remote: true, method: :get %>
+      <%= link_to "What's behind this link?", {:controller => "links", :action => "index", :name => link }%>
+    </li>
+    <%end%> 
+
+</div>
+
+
+
