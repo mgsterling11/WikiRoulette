@@ -14,7 +14,7 @@ class Scraper
 
   def get_wiki_links(link)
     # mechanize_agent = Mechanize.new
-    binding.pry
+    # binding.pry
     wiki_page = mechanize_agent.get("https://en.wikipedia.org" + link)
     wiki_page.links_with(:href => /^\/wiki\/?/).map { |link| link.href }   
   end

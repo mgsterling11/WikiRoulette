@@ -2,11 +2,9 @@ require 'pry'
 
 class LinksController < ApplicationController
     
-
   def index
     @links = Scraper.new.get_wiki_links(params['name'])
-    binding.pry
-    render json: {links: @links}
+    render "welcome/welcome_page", locals: {:links => @links}
   end
-
 end
+
