@@ -1,6 +1,6 @@
 
 <% @links.each do |link| %>
-  <li>
+  <ul>
     <%= link_to link, {:controller => "links", :action => "index", :name => link, remote: true }%>
-  </li>
+  </ul>
 <%end%>

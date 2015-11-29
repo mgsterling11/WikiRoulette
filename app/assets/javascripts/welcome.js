@@ -1,12 +1,10 @@
 
 $(function(){
-  
   $('a').on('ajax:success', function(e, data, status, xhr) {
-    debugger;
-    var $self = $(this);
-    $self.text();
-    $("div.links").find("a").remove();
-    $('div.links').prepend(xhr.responseText);
+    $('.wikis').empty();
+    $('.wikis').prepend(xhr.responseText);
+
+    var randomColor = Math.floor(Math.random()*16777215).toString(16);
+    $('body').css('background-color', '#'+randomColor)
   })
-  
 })
