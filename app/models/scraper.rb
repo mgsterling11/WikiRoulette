@@ -4,25 +4,29 @@ require 'pry'
 
 class Scraper
 
+@@all = []
+
   def mechanize_agent
     Mechanize.new
   end
 
-  # def parse_link(link)
-  #   link.slice("https://en.wikipedia.org")
-  # end
+  def store_link(link)
+    @@all << link
+  end
 
   def get_wiki_links(link)
-    # mechanize_agent = Mechanize.new
-    # binding.pry
+    store_link(link) 
     wiki_page = mechanize_agent.get("https://en.wikipedia.org" + link)
-    wiki_page.links_with(:href => /^\/wiki\/?/).map { |link| link.href }   
+    wiki_page.links_with(:href => /^\/wiki\/?/).map { |link| link.href }  
   end
 
   def get_homepage_links
-    # mechanize_agent = Mechanize.new
     homepage = mechanize_agent.get("https://en.wikipedia.org/wiki/Main_Page")
     homepage.links_with(:href => /^\/wiki\/?/).map { |link| link.href }   
+  end
+
+  def self.all
+    @@all
   end
 end
 
