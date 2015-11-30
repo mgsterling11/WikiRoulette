@@ -1,12 +1,9 @@
 
-<% @links.each_with_index do |link, index| %>
-  <ul>
-    <%=index + 1 %>: <%= link_to "Where does this lead?", {:controller => "links", :action => "index", :name => link, remote: true }%>
-  </ul>
-<%end%>
+<ul>
+  <% @links.each_with_index do |link, index| %>
+    
+      Link <%=index + 1 %>: <%= link_to "Where does this lead?", {:controller => "links", :action => "index", :name => link, remote: true } %>
 
-
- <%= form_tag('/final_wiki', method: :get) do %>
-    <%= submit_tag("Done?! See where you landed!") %>
-  <% end %> 
+  <%end%>
+</ul>
 

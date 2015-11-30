@@ -15,14 +15,17 @@
  */
 
 
+
 .show_background {
     width: 75%;
     margin: auto;
     border:3px solid black;
     padding: 10px;
-    opacity: .85;
   }
 
+.header {
+    color: black
+  }  
 
 /* Links */
 a,
