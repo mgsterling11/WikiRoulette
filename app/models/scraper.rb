@@ -18,6 +18,10 @@ class Scraper
     @@all = []
   end
 
+  def generate_links(link)
+    link ? get_wiki_links(link) : get_homepage_links
+  end
+
   def get_wiki_links(link)
     store_link(link) 
     wiki_page = mechanize_agent.get("https://en.wikipedia.org" + link)

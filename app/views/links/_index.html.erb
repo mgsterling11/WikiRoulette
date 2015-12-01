@@ -14,13 +14,21 @@
     <%else%>
       <ul>
         <% @wikis.each_with_index do |link, index| %> 
-          <%=index + 1 %>: <%= link_to link.gsub('_',' ').gsub('https://en.wikipedia.org/wiki/', ''), link %>  <br><br>
+          <%=index + 1 %>: <%= link_to link.gsub('_',' ').gsub('https://en.wikipedia.org/wiki/', '').gsub('%C3%','&#252').gsub("è", "&egrave").gsub('é', '&eacute').gsub('à', '&agrave').gsub('ç', '&ccedil'), link %>  <br><br>
         <%end%>
       </ul>
 
+    <div class='sidebar'> <%= form_tag('/links', method: :get) do %>
+        <%= submit_tag("Play again!") %>
+      <% end %> 
+    </div>
 
   <%end%>
   
+
+ 
+
+
 
 
 
