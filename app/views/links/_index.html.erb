@@ -1,10 +1,26 @@
+  
+  <% if @links %>
+    <div class='sidebar'> <%= form_tag('/final_wiki', method: :get) do %>
+        Link count: <%=@links.count%> <br><br>
+        Links clicked: <%=Scraper.all.count%><br><br>
+        <%= submit_tag("See where you landed!") %>
+      <% end %> 
+    </div>
 
-<ul>
-  <% @links.each_with_index do |link, index| %> 
-       #<%=index + 1 %>: <%= link_to "Where does this lead?", {:controller => "links", :action => "index", :name => link, remote: true } %> <br><br>
+      <% @links.each_with_index do |link, index| %> 
+         #<%=index + 1 %>: <%= link_to "Where does this lead?", {:controller => "links", :action => "index", :name => link, remote: true } %> <br><br>
+      <%end%>
+
+    <%else%>
+      <ul>
+        <% @wikis.each_with_index do |link, index| %> 
+          <%=index + 1 %>: <%= link_to link.gsub('_',' ').gsub('https://en.wikipedia.org/wiki/', ''), link %>  <br><br>
+        <%end%>
+      </ul>
+
 
   <%end%>
-</ul>
+  
 
 
 

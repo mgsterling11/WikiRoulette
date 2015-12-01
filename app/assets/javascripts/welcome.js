@@ -1,5 +1,6 @@
 $(function(){
     $(document).on('ajax:success', 'a', function(e, data, status, xhr){
+    $('.instructions').empty();
     $('.wikis').empty();
     $('.wikis').prepend(xhr.responseText.slice(2055, -251));
 
@@ -7,3 +8,5 @@ $(function(){
     $('body').css('background-color', '#' + randomColor)
     })
   })
+
+
