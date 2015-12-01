@@ -14,6 +14,10 @@ class Scraper
     @@all << link
   end
 
+  def self.clear
+    @@all = []
+  end
+
   def get_wiki_links(link)
     store_link(link) 
     wiki_page = mechanize_agent.get("https://en.wikipedia.org" + link)
@@ -28,5 +32,10 @@ class Scraper
   def self.all
     @@all
   end
+
+  def generate_wiki_links_path
+    Scraper.all.map {|link| link.gsub('_',' ').gsub('/wiki/', '')}
+  end
+
 end
 

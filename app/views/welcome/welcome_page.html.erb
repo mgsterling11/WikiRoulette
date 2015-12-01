@@ -9,8 +9,16 @@
 
 <div class="links">
   <div class="wikis">
+    <% if @links %> 
       <%= render partial: 'links/index', locals: {links: @links} %>
+    <% else %>
+      <%= render partial: 'links/show_wikis', locals: {links: @wikis} %>
+      <% end %>
   </div>
 </div>
+
+ <%= form_tag('/final_wiki', method: :get) do %>
+    <%= submit_tag("Done?! See where you landed!") %>
+  <% end %> 
 
 

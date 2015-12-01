@@ -1,9 +1,10 @@
 
 <ul>
-  <% @links.each_with_index do |link, index| %>
-    
-      Link <%=index + 1 %>: <%= link_to "Where does this lead?", {:controller => "links", :action => "index", :name => link, remote: true } %>
+  <% @links.each_with_index do |link, index| %> 
+       #<%=index + 1 %>: <%= link_to "Where does this lead?", {:controller => "links", :action => "index", :name => link, remote: true } %> <br><br>
 
   <%end%>
 </ul>
+
+
 
