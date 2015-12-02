@@ -3,22 +3,26 @@
     <div class='sidebar'> <%= form_tag('/final_wiki', method: :get) do %>
         Link count: <%=@links.count%> <br><br>
         Links clicked: <%=Scraper.all.count%><br><br>
-        <%= submit_tag("See where you landed!") %>
+        <%= submit_tag("Done? Click here!") %>
       <% end %> 
     </div>
 
+
       <% @links.each_with_index do |link, index| %> 
-         #<%=index + 1 %>: <%= link_to "Where does this lead?", {:controller => "links", :action => "index", :name => link, remote: true } %> <br><br>
+      <br>
+         #<%=index + 1 %>: <%= link_to "Where does this lead?", {:controller => "links", :action => "index", :name => link, remote: true } %> 
+      <br>
       <%end%>
 
     <%else%>
       <ul>
         <% @wikis.each_with_index do |link, index| %> 
-          <%=index + 1 %>: <%= link_to link.gsub('_',' ').gsub('https://en.wikipedia.org/wiki/', '').gsub('%C3%','&#252').gsub("è", "&egrave").gsub('é', '&eacute').gsub('à', '&agrave').gsub('ç', '&ccedil'), link %>  <br><br>
+          #<%=index + 1 %>: <%= link_to link.gsub('_',' ').gsub('https://en.wikipedia.org/wiki/', '').gsub('%C3%','&#252').gsub("è", "&egrave").gsub('é', '&eacute').gsub('à', '&agrave').gsub('ç', '&ccedil'), link %>  <br><br>
         <%end%>
       </ul>
 
     <div class='sidebar'> <%= form_tag('/links', method: :get) do %>
+        <br><br>
         <%= submit_tag("Play again!") %>
       <% end %> 
     </div>

@@ -10,19 +10,17 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
+ *
  *= require_self
+ *= require journal
  */
-
-
 
 .sidebar {
    width: 125px;
    height: 100px;
    position: fixed;
-   right: 30px;
+   right: 45px;
    top: 300px;
-   border: 2px solid black;
    text-align: center;
 }
 
@@ -37,30 +35,28 @@
     color: black;
   }
 
-.header {
-    color: black
+.text-center {
+    color: white;
+    text-align: center;
+    margin: auto;
   }
-
 
 .instructions {
     color: black
   }  
 
-/*.footer{
-  background:white;
-  width:100%;
-  height:40px;
-  position:fixed;
-  bottom:0;
-  left:0;
+.footer{
+  background:orange;
+  height:60px;
+  color: black;
+  width: 70%;
+  margin: auto;
+  border:3px solid black;
+  padding: 10px;
 }
-*/
+
 /* Links */
-a,
-a:focus,
-a:hover {
-  color: #fff;
-}
+
 
 /* Custom default button */
 .btn-default,
@@ -72,7 +68,6 @@ a:hover {
   border: 1px solid #fff;
 }
 
-
 /*
  * Base structure
  */
@@ -82,12 +77,13 @@ body {
   height: 100%;
 }
 body {
-  color: #fff;
-  text-align: center;
-  text-shadow: 0 1px 3px rgba(0,0,0,.5);
-  
+  text-align: center;  
+  color: black;
 }
 
+a:link {
+  color:#000;
+} 
 
 
 
