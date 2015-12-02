@@ -31,14 +31,14 @@
     padding: 10px;
   }
 
-.links {
-    color: black;
+.about_box {
+    width: 50%;
+    margin: auto;
+    padding: 20px;
   }
 
-.text-center {
-    color: white;
-    text-align: center;
-    margin: auto;
+.links {
+    color: black;
   }
 
 .instructions {

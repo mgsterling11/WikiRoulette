@@ -1,5 +1,3 @@
-require 'pry'
-
 class LinksController < ApplicationController
     
   def index
@@ -13,9 +11,5 @@ class LinksController < ApplicationController
     render "welcome/welcome_page", locals: {:wikis => @wikis}
   end
     
-  # def show 
-  #   link = WikipediaPage.new.generate_wiki_show_link(params['name'])
-  #   redirect_to link
-  # end
 end
 

@@ -1,7 +1,7 @@
   
   <% if @links %>
     <div class='sidebar'> <%= form_tag('/final_wiki', method: :get) do %>
-        Link count: <%=@links.count%> <br><br>
+        Link count: <%=@links.count %> <br><br>
         Links clicked: <%=Scraper.all.count%><br><br>
         <%= submit_tag("Done? Click here!") %>
       <% end %> 
@@ -16,6 +16,7 @@
 
     <%else%>
       <ul>
+        <br>
         <% @wikis.each_with_index do |link, index| %> 
           #<%=index + 1 %>: <%= link_to link.gsub('_',' ').gsub('https://en.wikipedia.org/wiki/', '').gsub('%C3%','&#252').gsub("è", "&egrave").gsub('é', '&eacute').gsub('à', '&agrave').gsub('ç', '&ccedil'), link %>  <br><br>
         <%end%>

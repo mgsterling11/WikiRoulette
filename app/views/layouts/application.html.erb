@@ -7,31 +7,30 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">WIKIROULETTE</a>
+      </div>
 
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">WIKIROULETTE</a>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+        <ul class="nav navbar-nav">
+          <li><a href="welcome/about">About this Project</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="https://github.com/mgsterling11/wikiroulette">View on GitHub</a></li>
+          <li><a href="http://www.michaelgsterling.com">Michael Sterling</a></li>
+        </ul>
+      </div>
     </div>
-
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
-      <ul class="nav navbar-nav">
-        <li><a href="#">Help? <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">About this Project</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="https://github.com/mgsterling11/wikiroulette">View on GitHub</a></li>
-        <li><a href="http://www.michaelgsterling.com">Contact me</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+  </nav>
 
 <%= yield %>
 
